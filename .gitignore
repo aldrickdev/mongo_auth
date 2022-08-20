@@ -104,7 +104,7 @@ celerybeat.pid
 # Environments
 .env
 .venv
-env/
+# env/
 venv/
 ENV/
 env.bak/
@@ -133,3 +133,5 @@ dmypy.json
 
 # vscode
 .vscode
+
+Todos.md
