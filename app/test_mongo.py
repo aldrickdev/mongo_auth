@@ -6,9 +6,9 @@ import motor.motor_asyncio
 import beanie
 from pydantic import Field, EmailStr
 
-import env
+import env_vars
 
-env.init_env_vars()
+env_vars.init_env_vars()
 
 
 class User(beanie.Document):
@@ -18,6 +18,17 @@ class User(beanie.Document):
     role: Optional[str] = "standard"
     hashed_password: str
     date_created: Optional[str] = ""
+
+    def to_json(self):
+        return {
+            "id": str(self.id),
+            "username": self.username,
+            "email": self.email,
+            "disabled": self.disabled,
+            "role": self.role,
+            "hashed_password": self.hashed_password,
+            "date_created": self.date_created,
+        }
 
 
 async def test():
@@ -37,7 +48,8 @@ async def test():
     await test_user.insert()
 
     all_users = await User.find_all().to_list()
-    print(all_users)
+    for user in all_users:
+        print(user.to_json())
 
 
 asyncio.run(test())

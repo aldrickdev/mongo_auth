@@ -15,8 +15,17 @@ pytz = "^2022.2.1"
 python-multipart = "^0.0.5"
 python-jose = {extras = ["cryptography"], version = "^3.3.0"}
 python-dotenv = "^0.20.0"
+types-python-jose = "^3.3.4"
+motor-stubs = "^1.7.1"
+passlib = {extras = ["bcrypt"], version = "^1.7.4"}
 
 [tool.poetry.dev-dependencies]
+flake8 = "^5.0.4"
+black = "^22.6.0"
+mypy = "^0.971"
+
+[tool.black]
+line-length = 100
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]

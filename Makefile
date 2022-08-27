@@ -4,7 +4,7 @@ name = greymint-auth
 
 # Runs a formatter, linter then static analyzer
 :PHONY check
-check: format lint stana
+check: format lint 
 
 # Builds an image for the application
 :PHONY bim

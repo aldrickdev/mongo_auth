@@ -1,0 +1,24 @@
+{
+    "python.linting.enabled": true,
+    "python.linting.flake8Enabled": true,
+    "python.linting.flake8Path": "flake8",
+    "python.linting.flake8Args": [],
+
+    "python.formatting.provider": "black",
+    "python.formatting.blackPath": "black",
+    "python.formatting.blackArgs": [],
+
+    "python.analysis.typeCheckingMode": "strict",
+
+    "editor.formatOnSave": true,
+    "runOnSave.statusMessageTimeout": 3000,
+    "runOnSave.commands": [
+        {
+            "match": "/app/*",
+            "command": "make -k check",
+            "runIn": "terminal",
+            "runningStatusMessage": "Running Code Checks...",
+            "finishStatusMessage": "Code Checks complete..."
+        }
+    ]
+}
