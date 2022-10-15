@@ -38,7 +38,7 @@ async def server_startup() -> None:
     # get database models
     mongo_models = [models.User]
 
-    if isinstance(mongo_user, str) and isinstance(mongo_pwd, str):
-        await database.init_db(mongo_user, mongo_pwd, mongo_models)
+    # if isinstance(mongo_user, str) and isinstance(mongo_pwd, str):
+        # await database.init_db(mongo_user, mongo_pwd, mongo_models)
 
     print("Connected to Database")
